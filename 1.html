@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+<head>
+  <title>DAERYUN</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+
+
+</head>
+
+
+    <body>
+    <div class="background">
+      <div style="margin-left:150px; ">
+    <p style="font-size:16px;letter-spacing: 5px; color:lightgray;">DAERYUN LAWFIRM</p>
+
+
+    <a style="font-size: 40px;">대륜의</a>  <a style="font-size: 40px; color:red;">이혼전문센터</a>
+
+    <div style="font-size:13px; margin-top:30px; color:gray;">법률에 대한 전문성뿐 아니라 깊은 이해를 바탕으로 의뢰인과 함께 긴밀히 소통하고 있으며 의뢰인의 입장에서
+    <br>함께 고민하고 문제를 해결하고자 하는 마음으로 고객을 위한 최적의 법률 조력자가 될 것입니다.
+    </div>
+
+    <div class="swiper-container" style="margin-top:120px; ">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="slide1.png" alt=""></div>
+        <div class="swiper-slide"><img src="slide2.png" alt=""></div>
+        <div class="swiper-slide"><img src="slide3.png" alt=""></div>
+        <div class="swiper-slide"><img src="slide4.png" alt=""></div>
+      </div>
+    </div>
+    </div>
+    </div>
+      <script>
+      new Swiper('.swiper-container', {
+        slidesPerView: '4', //한번에 보여줄 요소 갯수 지정. auto 로 설정해도 됨.
+        spaceBetween: 5, //슬라이드간 padding 값 30px 씩 떨어뜨려줌
+        loop: true, //loop 를 true 로 할경우 무한반복 슬라이드
+        autoplay: {
+          delay: 2000, //2초에 한번씩 자동으로 슬라이드
+        },
+      });
+      </script>
+
+
+
+    <p style="text-align: center; margin-top:50px;font-size: 30px;">지인의 소개로 이어지는,
+      <strong>의뢰인이 다시 찾는 로펌</strong></p>
+
+
+      <div class="chartWrap" style="margin-left:350px;">
+
+        <div class="chart">
+          <div class="chart-bar" data-deg="50"></div>
+          <div class="chart-bar" data-deg="95"></div>
+          <div class="chart-bar" data-deg="200"></div>
+          <div class="chart-bar" data-deg="15"></div>
+        </div>
+
+
+      </div>
+          <script>
+            var _chart = document.querySelector('.chart');
+            var _chartBar = document.querySelectorAll('.chart-bar');
+            var color = ['#9986dd','#fbb871','#bd72ac','#f599dc'] //색상
+            var newDeg = []; //차트 deg
+
+            function insertAfter(newNode, referenceNode) {
+                referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+            }
+
+            function chartLabel(){
+              var _div = document.createElement('div');
+              _div.className = 'chart-total';
+              _div.innerHTML = `<span class="chart-total-num">서비스 <br>만족도 결과</span>
+                                <span class="chart-total-text1">매우만족</span>
+                                <span class="chart-total-text2">만족</span>
+                                <span class="chart-total-text3">보통</span>
+                                <span class="chart-total-text4">불만족</span>`;
+              insertAfter(_div,_chart);
+            }
+
+            function chartDraw(){
+              for( var i=0;i<_chartBar.length;i++){
+                var _num = _chartBar[i].dataset.deg
+                newDeg.push( _num )
+              }
+
+              var num = newDeg.length - newDeg.length;
+              _chart.style.background = 'conic-gradient(#9986dd '+
+                                                            newDeg[num]+'deg, #fbb871 '+
+                                                            newDeg[num]+'deg '+newDeg[num+1]+'deg, #bd72ac '+
+                                                            newDeg[1]+'deg '+newDeg[2]+'deg, #f599dc '+
+                                                            newDeg[2]+'deg )';
+
+              chartLabel();
+            }
+
+            chartDraw();
+          </script>
+
+    <div style="margin-left:150px;">
+      <span style="margin-left: 150px;font-size:40px;">왜?</span><span> 결국 대륜인가</span>
+        <div style="text-align:center; margin-left:150px;">
+          <p class="box">사건 선임부터 사후처리까지 <strong>전담변호사의 ALL케어 시스템</strong></p>
+          <p class="box">사건 진행 동안 끊임없는 <strong>의뢰인과의 소통과 맞춤형 솔루션 제시</strong></p>
+          <p class="box">의뢰인의 현실적인 상황까지 고려한 <strong>합리적인 가격의 수임료 책정</strong></p>
+        </div>
+    </div>
+
+    <div class="review">의뢰인 후기 보러가기 -></div>
+  </body>
+  </html>
